@@ -212,7 +212,7 @@ onAuthStateChanged(auth, async (user) => {
         const myData = (await getDoc(doc(db, 'Companies ', company_name.textContent, 'Investors', user.uid))).data();
         const companyData = (await getDoc(doc(db, 'Companies ', company_name.textContent))).data();
         const investment_amount = parseFloat(document.getElementById('investment_amount').value);
-        if (investment_amount <= userData.balance) {
+        if (investment_amount <= newUserData.balance) {
           webLogo.style.display = 'flex';
           if (myData) {
             await updateDoc(doc(db, 'Companies ', company_name.textContent, 'Investors', userData.uid), {
