@@ -208,6 +208,7 @@ onAuthStateChanged(auth, async (user) => {
 
       const buy = document.getElementById('buy');
       buy.addEventListener('click', async () => {
+        const newUserData = (await getDoc(doc(db, 'users', userData.uid))).data();
         const myData = (await getDoc(doc(db, 'Companies ', company_name.textContent, 'Investors', user.uid))).data();
         const companyData = (await getDoc(doc(db, 'Companies ', company_name.textContent))).data();
         const investment_amount = parseFloat(document.getElementById('investment_amount').value);
@@ -232,7 +233,7 @@ onAuthStateChanged(auth, async (user) => {
             })
           }
           await updateDoc(doc(db, 'users', userData.uid), {
-            balance: userData.balance - investment_amount,
+            balance: newUserData.balance - investment_amount,
           })
         } else {
           pop_up.textContent = 'You don’t have enough money to buy';
@@ -246,6 +247,7 @@ onAuthStateChanged(auth, async (user) => {
 
       const sell = document.getElementById('sell');
       sell.addEventListener('click', async () => {
+        const newUserData = (await getDoc(doc(db, 'users', userData.uid))).data();
         const myData = (await getDoc(doc(db, 'Companies ', company_name.textContent, 'Investors', user.uid))).data();
         const companyData = (await getDoc(doc(db, 'Companies ', company_name.textContent))).data();
         const investment_amount = parseFloat(document.getElementById('investment_amount').value);
@@ -257,7 +259,7 @@ onAuthStateChanged(auth, async (user) => {
               investment: parseFloat((myData.investment + myData.profit - investment_amount).toFixed(2)),
             })
             await updateDoc(doc(db, 'users', userData.uid), {
-              balance: parseFloat((userData.balance + investment_amount).toFixed(2)),
+              balance: parseFloat((newUserData.balance + investment_amount).toFixed(2)),
             })
             await updateDoc(doc(db, 'Companies ', company_name.textContent), {
               capital: parseFloat((companyData.capital - investment_amount + myData.profit).toFixed(2)),
@@ -340,7 +342,7 @@ onAuthStateChanged(auth, async (user) => {
 
       const wt = document.getElementById('wt');
       wt.addEventListener('click', async () => {
-        const newUserData = (await getDoc(doc(db, 'users', user.uid))).data();
+        const newUserData = (await getDoc(doc(db, 'users', userData.uid))).data();
         const wtAmount = parseFloat(document.getElementById('wtAmount').value);
         const acNum = document.getElementById('acNum').value;
         if (wtAmount <= newUserData.balance) {
