@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ilixa</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div style="display:none;" class="webLogo">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <div class="documentVer" style="display: none;font-size: 12px">
+    <p>For document and email verification you need to send an email to the email address bellow.</p>
+
+    <div style="display: flex;align-items: center;gap:10px;">
+      <span>To: </span>
+      <input readonly type="text" value="ilixa745@gmail.com" class="emailAddressText">
+      <span><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" style="height: 20px" id="emailAddressCopy">
+          <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="var(--clr-text)" stroke="var(--clr-text)" stroke-linejoin="round" stroke-width="32" />
+          <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="var(--clr-text)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+        </svg></span>
+    </div><br>
+
+    <p>Set subject shown bellow</p>
+
+    <div style="display: flex;align-items: center;gap:10px;">
+      <span>Subject: </span>
+      <input readonly type="text" value="Document verification" class="emailSubjectText">
+      <span><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" style="height: 20px" id="emailSubjectCopy">
+          <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="var(--clr-text)" stroke="var(--clr-text)" stroke-linejoin="round" stroke-width="32" />
+          <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="var(--clr-text)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+        </svg></span>
+    </div><br>
+
+    <p>You have to send email from the email address you registered in ilixa website.</p>
+
+    <div class="copyText">
+      <textarea readonly rows="18" cols="40" class="emailText" style="font-size: 10px"></textarea>
+      <span><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" style="height: 25px" id="emailCopy">
+          <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="var(--clr-text)" stroke="var(--clr-text)" stroke-linejoin="round" stroke-width="32" />
+          <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="var(--clr-text)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+        </svg></span>
+    </div>
+    
+    <p>Attach your documents and send the email.</p>
+    <p>It may take few minutes. This might take up to 24 hours in some cases.</p>
+  </div>
+
+  <div style="display: none;" class="forms">
+    <div style="display: none;" class="sign_up">
+      <form id="signUp">
+        <h3>Sign Up</h3>
+        <div class="InpBox">
+          <input type="text" name="" id="displayName" required>
+          <label>Name</label>
+        </div>
+        <div class="InpBox">
+          <input type="text" name="" id="email" required>
+          <label>Email</label>
+        </div>
+        <div class="InpBox">
+          <input type="text" name="" id="phone" required>
+          <label>Phone Number</label>
+        </div>
+        <div style="color: red;font-size: 10px;" class="user_already_exist"></div>
+        <div class="InpBox">
+          <input type="password" name="pass" id="password" required>
+          <label>Password</label>
+        </div>
+        <div class="InpBox">
+          <input type="password" name="pass" id="confirm_password" required>
+          <label>Confirm Password</label>
+        </div>
+        <div style="color: red;font-size: 10px;" class="wrongPass"></div><br>
+        <div class="submitBox">
+          <button type="submit">Sign up</button>
+          <p>Already have an account? <a id="toSignIn" href="#">Sign in</a>
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="sign_in">
+      <form id="signIn">
+        <h3>Sign in</h3>
+        <div class="InpBox">
+          <input type="text" name="" id="signIn_email" required>
+          <label>Email</label>
+        </div>
+        <div style="color: red;font-size: 10px;" class="user_not_found"></div>
+        <div class="InpBox">
+          <input type="password" name="pass" id="signIn_password" required>
+          <label>Password</label>
+        </div>
+        <div style="color: red;font-size: 10px;" class="in_wrong_pass"></div><br>
+        <div class="submitBox">
+          <button type="submit">Sign in</button>
+          <p>Don't have an account? <a id="toSignUp" href="#">Sign up</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div style="display: none;" class="main">
+    <div class="header">
+      <span class="app_name">I L I X A</span>
+      <span>
+        <span class="notiBox">
+          <svg xmlns="http://www.w3.org/2000/svg" id="toNotification" class="ionicon" viewBox="0 0 512 512">
+            <rect x="48" y="96" width="416" height="320" rx="40" ry="40" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            <path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M112 160l144 112 144-112" />
+          </svg>
+          <div class="notiInd"></div>
+        </span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" id="toProfile" class="ionicon" viewBox="0 0 512 512" style="height: 25px;">
+            <path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke-miterlimit="10" />
+          </svg>
+        </span>
+      </span>
+    </div>
+    <div class="content">
+      <div class="companies">
+        <div class="com_head">
+          <span>Name</span>
+          <span class="CP">
+            <span>Company(%)</span>
+            <span class="my_pro">Profit(%)</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: none;" class="notification">
+    <div class="header">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon back" viewBox="0 0 512 512" id="fromNotification" style="height: 25px;">
+          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
+        </svg>
+        <span>Notification</span>
+      </span>
+    </div>
+    <div class="notificationContainer">
+
+    </div>
+  </div>
+
+  <div style="display: none;" class="profile">
+    <div class="header">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon back" viewBox="0 0 512 512" id="fromProfile" style="height: 25px;">
+          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
+        </svg>
+        <span>PROFILE</span>
+      </span>
+      <span><span class="balance"></span><span>BDT</span></span>
+    </div>
+    <div class="content">
+      <div class="LIT">
+        <div class="L">
+          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" style="height:80px;">
+            <path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke-miterlimit="10" />
+          </svg>
+        </div>
+        <div class="IT">
+          <div class="Pname"></div>
+          <div class="I"><span>ID:</span><input readonly type="text" id="uID" class="uidText"><span><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" style="height: 15px" id="uidCopy">
+                <rect x="128" y="128" width="336" height="336" rx="57" ry="57" fill="var(--clr-text)" stroke="var(--clr-text)" stroke-linejoin="round" stroke-width="32" />
+                <path d="M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24" fill="none" stroke="var(--clr-text)" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+              </svg></span></div>
+          <div class="T">
+            <span id="deposit" class="tran">
+              <span class="trOpt">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <rect x="48" y="96" width="416" height="320" rx="56" ry="56" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill="none" stroke-linejoin="round" stroke-width="60" d="M48 192h416M128 300h48v20h-48z" />
+                </svg>
+              </span>
+              <span>Deposit</span>
+            </span>
+            <span id="withdraw" class="tran">
+              <span class="trOpt">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <rect x="32" y="80" width="448" height="256" rx="16" ry="16" transform="rotate(180 256 208)" fill="none" stroke-linejoin="round" stroke-width="32" />
+                  <path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M64 384h384M96 432h320" />
+                  <circle cx="256" cy="208" r="80" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M480 160a80 80 0 01-80-80M32 160a80 80 0 0080-80M480 256a80 80 0 00-80 80M32 256a80 80 0 0180 80" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <span>Withdraw</span>
+            </span>
+            <span id="transfer" class="tran">
+              <span class="trOpt">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path d="M448 256L272 88v96C103.57 184 64 304.77 64 424c48.61-62.24 91.6-96 208-96v96z" fill="none" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <span>Transfer</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="info_div">
+          <span>Email:</span>
+          <span class="pEmail"></span>
+        </div>
+        <div class="info_div">
+          <span>Phone:</span>
+          <span class="pPhone"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: none;" class="dpv">
+    <div class="top">
+      <span style="display: flex;align-items: center;justify-content: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon back" viewBox="0 0 512 512" style="height: 25px;" id="dpBack">
+          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
+        </svg>
+      </span>
+    </div>
+    <div class="qrLink">
+      <img src="./qrlink.jpg" alt="">
+    </div>
+    <div class="invForm">
+      <div style="color: var(--clr-text-light);font-size: 24px;text-align: center; font-weight: 500;">Deposit</div>
+
+      <input type="number" min="5" placeholder="Deposit Amount ($)" id="dpAmount" required>
+      <input type="text" placeholder="Transaction ID" id="dpTrId" required>
+      <button id="dp">Deposit</button>
+    </div>
+    <div class="ext">
+      <div>
+        <p>Click on the Binance icon located at the top of the screen to open the payment options and proceed with your transaction.</p><img src="./1st.jpg" alt="">
+      </div>
+
+      <div>
+        <img src="./2nd.jpg" alt="">
+        <p>Click on the QR code scanner icon located on the screen to quickly scan a code and access the linked information or complete a transaction.</p>
+      </div>
+      <div>
+        <p>Change the cryptocurrency to USDT by selecting it from the list of available options in the currency settings or the payment section.</p><img src="./3rd.jpg" alt="">
+      </div>
+      <div>
+        <img src="./4th.jpg" alt="">
+        <p>Set your desired transaction amount in the input field, then add a note specifying your UID and username to ensure proper identification and processing of your payment.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: none;" class="wtv">
+    <div class="top">
+      <span style="display: flex;align-items: center;justify-content: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon back" viewBox="0 0 512 512" style="height: 25px;" id="wtBack">
+          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
+        </svg>
+      </span>
+    </div>
+    <div class="invForm">
+      <div style="color: var(--clr-text-light);font-size: 24px;text-align: center; font-weight: 500;">Withdraw</div>
+      <input type="number" placeholder="Withdraw Amount (BDT)" id="wtAmount" required>
+      <input type="text" placeholder="Binance uid" id="acNum" required>
+      <button id="wt">Withdraw</button>
+    </div>
+  </div>
+
+  <div style="display: none;" class="trv">
+    <div class="top">
+      <span style="display: flex;align-items: center;justify-content: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon back" viewBox="0 0 512 512" style="height: 25px;" id="trBack">
+          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
+        </svg>
+      </span>
+    </div>
+    <div class="invForm">
+      <div style="color: var(--clr-text-light);font-size: 24px;text-align: center; font-weight: 500;">Transfer to Friend</div>
+      <input type="text" placeholder="Your friend's ID" id="trID" required>
+      <div style="color:red;font-size: 8px;" class="fnd_not_found"></div>
+      <input type="number" placeholder="Amount" id="trAmount" required>
+      <button id="tr">Transfer</button>
+    </div>
+  </div>
+
+
+  <div style="display: none;" class="comPage">
+    <div class="top">
+      <span style="display: flex;align-items: center;justify-content: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon back" viewBox="0 0 512 512" style="height: 25px;" id="fromCom">
+          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
+        </svg>
+      </span>
+      <span class="company_name"></span>
+    </div>
+
+    <div class="investment_info">
+      <span class="my_inv_info">
+        <div style="text-align: center;" class="total_money"></div>
+        <span style="display: flex;align-items: center;">
+          <div class="my_inv"></div>
+          <div class="my_profit_percentage"></div>
+        </span>
+      </span>
+      <span>
+        <div>Balance: <span class="my_balance"></span><span>BDT</span></div>
+        <div>Update time: 24H</div>
+        <div>24H high: <span class="dHigh"></span></div>
+        <div>24H low: <span class="dLow"></span></div>
+      </span>
+    </div>
+
+    <div class="company_info">
+      <div><span class="ifh">Name: </span><span class="compName"></span></div><br>
+      <div><span class="ifh">Description: </span>
+        <p class="compDescription"></p>
+      </div><br>
+      <div>
+        <span class="ifh">Founded: </span>
+        <span class="compFounded"></span>
+      </div><br>
+      <div>
+        <span class="ifh">Headquarters: </span>
+        <span class="compHeadquarters"></span>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <span class="btm_inp"><input type="number" min="500" value="500" id="investment_amount" required><span>BDT</span></span>
+      <span class="btm_btn">
+        <button id="buy" style="background-color: #2DBC84;">Buy</button>
+        <button id="sell" style="background-color: #F5455C;">Sell</button>
+      </span>
+    </div>
+  </div>
+
+  <div class="popUpContainer">
+    <div class="pop_up"></div>
+  </div>
+
+
+  <script type="module" src="main.js"></script>
+  <script src="navigation.js"></script>
+</body>
+
+</html>
