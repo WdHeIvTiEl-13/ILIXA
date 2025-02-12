@@ -40,8 +40,7 @@ body {
 
 .sign_up,
 .sign_in {
-  max-height: 50%;
-  width: 40%;
+  width: 300px;
   padding: 10px;
   border-radius: 18px;
   border: 2px solid var(--clr-border);
